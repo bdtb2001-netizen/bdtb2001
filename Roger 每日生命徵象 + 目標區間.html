@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/Robinson%20Liu/Downloads/roger_vitals_targets.html -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roger 每日生命徵象 + 目標區間</title>
+<script src="./Roger 每日生命徵象 + 目標區間_files/chart.umd.js.下載"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f0;color:#1a1a1a;padding:1.25rem}
+h1{font-size:17px;font-weight:500;margin-bottom:3px}
+.subtitle{font-size:12px;color:#888;margin-bottom:1.25rem}
+.card{background:#fff;border-radius:12px;border:0.5px solid rgba(0,0,0,0.1);padding:1.25rem;margin-bottom:1rem}
+.grid3{display:grid;grid-template-columns:auto 1fr 1fr;gap:5px 14px;align-items:center;font-size:12px;margin-bottom:10px}
+.col-h{font-size:10px;color:#aaa;text-align:center}
+.ind{display:flex;align-items:center;gap:6px;justify-content:flex-end;font-size:12px}
+.dot{width:12px;height:3px;border-radius:2px;display:inline-block}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+button{font-size:11px;padding:3px 10px;border:0.5px solid rgba(0,0,0,0.2);border-radius:6px;background:#fff;cursor:pointer;color:#333}
+button:hover{background:#f0f0f0}
+.chart-wrap{position:relative;width:100%;height:380px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:1rem}
+.stat{border-radius:8px;padding:9px 11px}
+.stat-label{font-size:10px;color:#888;margin-bottom:2px}
+.stat-val{font-size:21px;font-weight:500;line-height:1.1}
+.stat-target{font-size:10px;margin-top:3px;padding:2px 6px;border-radius:3px;display:inline-block}
+.ok{background:#d1fae5;color:#065f46}
+.warn{background:#fef3c7;color:#92400e}
+.low{background:#fee2e2;color:#991b1b}
+.events{display:flex;flex-wrap:wrap;gap:5px;margin-top:.75rem;font-size:11px}
+.tw{background:#fff8e1;color:#b45309;padding:2px 8px;border-radius:4px;border:0.5px solid #fcd34d}
+.td{background:#fef2f2;color:#b91c1c;padding:2px 8px;border-radius:4px;border:0.5px solid #fca5a5}
+.legend-note{font-size:11px;color:#aaa;margin-bottom:8px}
+.zone-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;font-size:11px;color:#666}
+.zone-swatch{width:14px;height:10px;border-radius:2px;display:inline-block;opacity:0.5}
+.dl-btn{margin-left:auto;background:#f0f7ff!important;border-color:#93c5fd!important;color:#1d4ed8!important}
+@media(max-width:600px){.stats{grid-template-columns:repeat(3,1fr)}.chart-wrap{height:300px}}
+</style>
+</head>
+<body>
+<h1>Roger 每日生命徵象紀錄</h1>
+<p class="subtitle">2026 年 4 月 14 日 – 4 月 25 日　｜　Post-Primary PCI 出院後追蹤　｜　35 歲</p>
+
+<div class="card">
+  <div class="grid3">
+    <div></div>
+    <div class="col-h">— 實線（原始值）</div>
+    <div class="col-h">- - 虛線（MA3）</div>
+    <div class="ind"><span class="dot" style="background:#E24B4A"></span>SBP 收縮壓</div>
+    <div style="text-align:center"><input type="checkbox" id="r-sbp" checked=""></div>
+    <div style="text-align:center"><input type="checkbox" id="m-sbp" checked=""></div>
+    <div class="ind"><span class="dot" style="background:#378ADD"></span>DBP 舒張壓</div>
+    <div style="text-align:center"><input type="checkbox" id="r-dbp" checked=""></div>
+    <div style="text-align:center"><input type="checkbox" id="m-dbp" checked=""></div>
+    <div class="ind"><span class="dot" style="background:#7F77DD"></span>MAP 平均動脈壓</div>
+    <div style="text-align:center"><input type="checkbox" id="r-map" checked=""></div>
+    <div style="text-align:center"><input type="checkbox" id="m-map" checked=""></div>
+    <div class="ind"><span class="dot" style="background:#1D9E75"></span>HR 脈搏</div>
+    <div style="text-align:center"><input type="checkbox" id="r-hr" checked=""></div>
+    <div style="text-align:center"><input type="checkbox" id="m-hr" checked=""></div>
+    <div class="ind"><span class="dot" style="background:#BA7517"></span>體重 kg</div>
+    <div style="text-align:center"><input type="checkbox" id="r-wt" checked=""></div>
+    <div style="text-align:center"><input type="checkbox" id="m-wt" checked=""></div>
+  </div>
+
+  <div class="zone-legend">
+    <span style="color:#666;font-weight:500">目標區間：</span>
+    <span><span class="zone-swatch" style="background:#E24B4A;display:inline-block"></span> SBP 110–129</span>
+    <span><span class="zone-swatch" style="background:#378ADD;display:inline-block"></span> DBP 70–79</span>
+    <span><span class="zone-swatch" style="background:#7F77DD;display:inline-block"></span> MAP 75–95</span>
+    <span><span class="zone-swatch" style="background:#1D9E75;display:inline-block"></span> HR 55–65</span>
+    <span style="font-size:10px;color:#aaa">（色帶 = 建議範圍；虛線 = 邊界／警戒）</span>
+  </div>
+
+  <p class="legend-note">MAP = DBP + (SBP−DBP)/3　　目標區間依 2025 ACC/AHA + ESC 2024 指引（35 歲 Post-MI 族群）</p>
+
+  <div class="btns">
+    <button onclick="toggleAll(true)">全部顯示</button>
+    <button onclick="toggleAll(false)">全部隱藏</button>
+    <button onclick="toggleGroup(&#39;r&#39;)">僅原始值</button>
+    <button onclick="toggleGroup(&#39;m&#39;)">僅移動平均</button>
+    <button class="dl-btn" onclick="downloadChart()">⬇ 下載 PNG</button>
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="bpChart" width="2462" height="418" style="display: block; box-sizing: border-box; height: 380px; width: 2238px;"></canvas>
+  </div>
+
+  <div class="stats">
+    <div class="stat" style="background:#fef2f2">
+      <div class="stat-label">平均 SBP</div>
+      <div class="stat-val" style="color:#E24B4A" id="avg-sbp">93</div>
+      <div class="stat-target low" id="sbp-status">↓ 低於目標 110–129</div>
+    </div>
+    <div class="stat" style="background:#eff6ff">
+      <div class="stat-label">平均 DBP</div>
+      <div class="stat-val" style="color:#378ADD" id="avg-dbp">59</div>
+      <div class="stat-target low" id="dbp-status">↓ 低於目標 70–79</div>
+    </div>
+    <div class="stat" style="background:#f5f3ff">
+      <div class="stat-label">平均 MAP</div>
+      <div class="stat-val" style="color:#7F77DD" id="avg-map">70</div>
+      <div class="stat-target low" id="map-status">↓ 低於目標 75–95</div>
+    </div>
+    <div class="stat" style="background:#ecfdf5">
+      <div class="stat-label">平均 HR</div>
+      <div class="stat-val" style="color:#1D9E75" id="avg-hr">73</div>
+      <div class="stat-target warn" id="hr-status">↑ 高於目標 55–65</div>
+    </div>
+    <div class="stat" style="background:#fffbeb">
+      <div class="stat-label">體重範圍</div>
+      <div class="stat-val" style="color:#BA7517;font-size:16px" id="rng-wt">90.1–94.0</div>
+      <div class="stat-target warn">BMI 目標 &lt;25</div>
+    </div>
+  </div>
+
+  <div class="events">
+    <span class="tw">⚠ 4/16p 姿勢性頭暈</span>
+    <span class="tw">⚠ 4/18p 散步後頭暈 SBP=77 MAP≈58</span>
+    <span class="td">! 4/20a HR=98（異常偏高）</span>
+    <span class="td">! 全程 SBP 均低於目標下限 110</span>
+  </div>
+</div>
+
+<p style="font-size:11px;color:#ccc;text-align:center">本圖表由 Claude AI 生成，僅供參考，不取代醫療建議。目標值依 2025 ACC/AHA 及 ESC 2024 指引。</p>
+
+<script>
+const raw=[
+  {label:'4/14', sbp:86, dbp:56, hr:77, wt:91.5},
+  {label:'4/15a',sbp:97, dbp:61, hr:75, wt:91.4},
+  {label:'4/15p',sbp:95, dbp:62, hr:74, wt:91.5},
+  {label:'4/16a',sbp:87, dbp:55, hr:69, wt:91.9},
+  {label:'4/16p',sbp:86, dbp:57, hr:76, wt:94},
+  {label:'4/17a',sbp:91, dbp:54, hr:74, wt:92.8},
+  {label:'4/17p',sbp:92, dbp:60, hr:68, wt:93.2},
+  {label:'4/18a',sbp:94, dbp:62, hr:66, wt:91.6},
+  {label:'4/18p',sbp:77, dbp:49, hr:72, wt:93},
+  {label:'4/19a',sbp:94, dbp:61, hr:67, wt:92.2},
+  {label:'4/19p',sbp:93, dbp:56, hr:69, wt:93.3},
+  {label:'4/20a',sbp:102,dbp:65, hr:98, wt:91.6},
+  {label:'4/20p',sbp:93, dbp:51, hr:75, wt:92.6},
+  {label:'4/21a',sbp:97, dbp:60, hr:70, wt:91.1},
+  {label:'4/21p',sbp:94, dbp:58, hr:71, wt:92.1},
+  {label:'4/22a',sbp:97, dbp:56, hr:70, wt:91},
+  {label:'4/22p',sbp:95, dbp:64, hr:72, wt:92.1},
+  {label:'4/23a',sbp:94, dbp:60, hr:74, wt:91.3},
+  {label:'4/23p',sbp:93, dbp:65, hr:72, wt:91},
+  {label:'4/24a',sbp:104,dbp:63, hr:73, wt:90.1},
+  {label:'4/24p',sbp:89, dbp:56, hr:71, wt:92},
+  {label:'4/25', sbp:97, dbp:62, hr:75, wt:91.4}
+];
+
+const cmap=(s,d)=>parseFloat((d+(s-d)/3).toFixed(1));
+function ma(arr,n=3){return arr.map((v,i)=>{if(i<n-1)return null;return parseFloat((arr.slice(i-n+1,i+1).reduce((a,b)=>a+b,0)/n).toFixed(1));});}
+const avg=arr=>Math.round(arr.reduce((a,b)=>a+b)/arr.length);
+
+const labels=raw.map(d=>d.label);
+const sbp=raw.map(d=>d.sbp),dbp=raw.map(d=>d.dbp);
+const map_=raw.map(d=>cmap(d.sbp,d.dbp));
+const hr=raw.map(d=>d.hr),wt=raw.map(d=>d.wt);
+
+const avgSBP=avg(sbp),avgDBP=avg(dbp),avgMAP=avg(map_),avgHR=avg(hr);
+document.getElementById('avg-sbp').textContent=avgSBP;
+document.getElementById('avg-dbp').textContent=avgDBP;
+document.getElementById('avg-map').textContent=avgMAP;
+document.getElementById('avg-hr').textContent=avgHR;
+document.getElementById('rng-wt').textContent=Math.min(...wt).toFixed(1)+'–'+Math.max(...wt).toFixed(1);
+
+function statusTag(el,val,lo,hi){
+  if(val>=lo&&val<=hi){el.className='stat-target ok';el.textContent='✓ 達標';}
+  else if(val<lo){el.className='stat-target low';el.textContent='↓ 低於目標 '+lo+'–'+hi;}
+  else{el.className='stat-target warn';el.textContent='↑ 高於目標 '+lo+'–'+hi;}
+}
+statusTag(document.getElementById('sbp-status'),avgSBP,110,129);
+statusTag(document.getElementById('dbp-status'),avgDBP,70,79);
+statusTag(document.getElementById('map-status'),avgMAP,75,95);
+statusTag(document.getElementById('hr-status'),avgHR,55,65);
+
+const n=labels.length;
+
+// Target zone plugin - draws filled bands and boundary lines
+const zonePlugin={
+  id:'zones',
+  beforeDatasetsDraw(ch){
+    const {ctx,chartArea:{left,right,top,bottom},scales:{y,y2}}=ch;
+    ctx.save();
+
+    function band(axis,lo,hi,color){
+      const yHi=axis.getPixelForValue(hi);
+      const yLo=axis.getPixelForValue(lo);
+      ctx.fillStyle=color;
+      ctx.fillRect(left,yHi,right-left,yLo-yHi);
+    }
+    function hline(axis,val,color,dash,label){
+      const yv=axis.getPixelForValue(val);
+      ctx.setLineDash(dash);ctx.strokeStyle=color;ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(left,yv);ctx.lineTo(right,yv);ctx.stroke();
+      if(label){
+        ctx.setLineDash([]);ctx.font='9px sans-serif';ctx.fillStyle=color;
+        ctx.fillText(label,right-ctx.measureText(label).width-4,yv-3);
+      }
+    }
+
+    // SBP zone 110-129
+    band(y,110,129,'rgba(226,75,74,0.07)');
+    hline(y,110,'rgba(226,75,74,0.45)',[4,3],'SBP低限 110');
+    hline(y,129,'rgba(226,75,74,0.3)',[2,4],'SBP高限 129');
+
+    // DBP zone 70-79
+    band(y,70,79,'rgba(55,138,221,0.07)');
+    hline(y,70,'rgba(55,138,221,0.45)',[4,3],'DBP低限 70');
+    hline(y,79,'rgba(55,138,221,0.3)',[2,4],'DBP高限 79');
+
+    // MAP zone 75-95
+    band(y,75,95,'rgba(127,119,221,0.06)');
+    hline(y,65,'rgba(226,75,74,0.55)',[5,3],'MAP警戒 65');
+    hline(y,75,'rgba(127,119,221,0.45)',[4,3],'MAP低限 75');
+
+    // HR zone 55-65
+    band(y,55,65,'rgba(29,158,117,0.07)');
+    hline(y,55,'rgba(29,158,117,0.45)',[4,3],'HR低限 55');
+    hline(y,65,'rgba(29,158,117,0.35)',[2,4],'HR高限 65');
+
+    ctx.restore();
+  }
+};
+
+const datasets=[
+  {id:'r-sbp',label:'SBP',      data:sbp,    borderColor:'#E24B4A',borderDash:[],   pointRadius:3,borderWidth:2,  yAxisID:'y', tension:0.3,pointHoverRadius:5,backgroundColor:'transparent'},
+  {id:'m-sbp',label:'SBP MA3',  data:ma(sbp),borderColor:'#E24B4A',borderDash:[5,3],pointRadius:0,borderWidth:1.5,yAxisID:'y', tension:0.3,spanGaps:true},
+  {id:'r-dbp',label:'DBP',      data:dbp,    borderColor:'#378ADD',borderDash:[],   pointRadius:3,borderWidth:2,  yAxisID:'y', tension:0.3,pointHoverRadius:5,backgroundColor:'transparent'},
+  {id:'m-dbp',label:'DBP MA3',  data:ma(dbp),borderColor:'#378ADD',borderDash:[5,3],pointRadius:0,borderWidth:1.5,yAxisID:'y', tension:0.3,spanGaps:true},
+  {id:'r-map',label:'MAP',      data:map_,   borderColor:'#7F77DD',borderDash:[],   pointRadius:4,borderWidth:2.5,yAxisID:'y', tension:0.3,pointHoverRadius:6,pointStyle:'rectRot',backgroundColor:'transparent'},
+  {id:'m-map',label:'MAP MA3',  data:ma(map_),borderColor:'#7F77DD',borderDash:[5,3],pointRadius:0,borderWidth:1.5,yAxisID:'y',tension:0.3,spanGaps:true},
+  {id:'r-hr', label:'HR',       data:hr,     borderColor:'#1D9E75',borderDash:[],   pointRadius:3,borderWidth:2,  yAxisID:'y', tension:0.3,pointHoverRadius:5,backgroundColor:'transparent'},
+  {id:'m-hr', label:'HR MA3',   data:ma(hr), borderColor:'#1D9E75',borderDash:[5,3],pointRadius:0,borderWidth:1.5,yAxisID:'y', tension:0.3,spanGaps:true},
+  {id:'r-wt', label:'體重',     data:wt,     borderColor:'#BA7517',borderDash:[],   pointRadius:3,borderWidth:2,  yAxisID:'y2',tension:0.3,pointHoverRadius:5,backgroundColor:'transparent'},
+  {id:'m-wt', label:'體重 MA3', data:ma(wt), borderColor:'#BA7517',borderDash:[5,3],pointRadius:0,borderWidth:1.5,yAxisID:'y2',tension:0.3,spanGaps:true}
+];
+
+const chart=new Chart(document.getElementById('bpChart').getContext('2d'),{
+  type:'line',
+  data:{labels,datasets},
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        callbacks:{
+          label:(c)=>{
+            const u=c.dataset.yAxisID==='y2'?' kg':' mmHg/bpm';
+            return c.dataset.label+': '+(c.parsed.y!==null?c.parsed.y:'—')+u;
+          },
+          afterBody:(items)=>{
+            const i=items[0].dataIndex;
+            const s=sbp[i],d=dbp[i],m=map_[i],h=hr[i];
+            const lines=[];
+            if(s<110) lines.push('⚠ SBP 低於目標 ('+s+' < 110)');
+            if(s>129) lines.push('⚠ SBP 高於目標 ('+s+' > 129)');
+            if(d<70)  lines.push('⚠ DBP 低於目標 ('+d+' < 70)');
+            if(m<65)  lines.push('🔴 MAP 低於警戒 ('+m+' < 65)');
+            if(h>65)  lines.push('⚠ HR 高於目標 ('+h+' > 65)');
+            if(h<55)  lines.push('⚠ HR 低於目標 ('+h+' < 55)');
+            return lines;
+          }
+        }
+      }
+    },
+    scales:{
+      x:{ticks:{font:{size:9},maxRotation:45,autoSkip:false},grid:{color:'rgba(0,0,0,0.05)'}},
+      y:{position:'left',min:40,max:140,title:{display:true,text:'mmHg / bpm',font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:10}}},
+      y2:{position:'right',min:88,max:96,title:{display:true,text:'kg',font:{size:11}},grid:{display:false},ticks:{font:{size:10},callback:v=>v.toFixed(1)}}
+    }
+  },
+  plugins:[zonePlugin]
+});
+
+function setV(id,v){const ds=chart.data.datasets.find(d=>d.id===id);if(ds)ds.hidden=!v;}
+function syncC(id,v){const el=document.getElementById(id);if(el)el.checked=v;}
+
+['sbp','dbp','map','hr','wt'].forEach(k=>{
+  document.getElementById('r-'+k).addEventListener('change',function(){setV('r-'+k,this.checked);chart.update();});
+  document.getElementById('m-'+k).addEventListener('change',function(){setV('m-'+k,this.checked);chart.update();});
+});
+function toggleAll(v){
+  ['sbp','dbp','map','hr','wt'].forEach(k=>{['r-','m-'].forEach(p=>{setV(p+k,v);syncC(p+k,v);});});
+  chart.update();
+}
+function toggleGroup(prefix){
+  const other=prefix==='r'?'m':'r';
+  ['sbp','dbp','map','hr','wt'].forEach(k=>{
+    setV(prefix+'-'+k,true);syncC(prefix+'-'+k,true);
+    setV(other+'-'+k,false);syncC(other+'-'+k,false);
+  });chart.update();
+}
+function downloadChart(){
+  const a=document.createElement('a');
+  a.href=document.getElementById('bpChart').toDataURL('image/png');
+  a.download='roger_vitals_targets.png';a.click();
+}
+</script>
+
+
+</body></html>
